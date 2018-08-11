@@ -9,7 +9,8 @@ import org.usfirst.frc.team3218.robot.commands.Loader.LoaderRetract;
 import org.usfirst.frc.team3218.robot.commands.cannon.Fire;
 import org.usfirst.frc.team3218.robot.commands.cannon.FireSequence;
 
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -21,24 +22,24 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class OI {
 	
 	
-    private static Joystick stick = new Joystick(RobotMap.joystickChannel);
+    private static XboxController xbox = new XboxController(RobotMap.xboxPort);
 
-    private Button trigger = new JoystickButton(stick, RobotMap.fireButton),
-    			   upButton = new JoystickButton(stick, RobotMap.upButton),
-    			   downButton = new JoystickButton(stick, RobotMap.downButton),
-    			   loadEjectButton = new JoystickButton(stick, RobotMap.loadEjectButton),
-    			   loadRetractButton = new JoystickButton(stick, RobotMap.loadRetractButton),
-    			   loadSequenceButton = new JoystickButton(stick, RobotMap.loadSequenceButton);
-    			//   compressButton = new JoystickButton(stick, RobotMap.compressButton);
-    
+    private Button aButton = new JoystickButton(xbox, RobotMap.aButtonPort),
+    			   bButton = new JoystickButton(xbox, RobotMap.bButtonPort),
+    			   yButton = new JoystickButton(xbox, RobotMap.yButtonPort),
+    			   xButton = new JoystickButton(xbox, RobotMap.loadEjectButton),
+    			   rightBumper = new JoystickButton(xbox, RobotMap.rightBumperPort),
+    			   leftBumper = new JoystickButton(xbox, RobotMap.leftBumperPort),
+    			   startButton = new JoystickButton(xbox,RobotMap.startButtonPort),
+    			   backButton = new JoystickButton(xbox,RobotMap.backButtonPort);
     public OI(){
     	//button actions
-    	trigger.whileHeld(new FireSequence());
-    	upButton.whileHeld(new AngleDown());
-    	downButton.whileHeld(new AngleUp());
-    	loadRetractButton.whenPressed(new LoaderRetract());
-    	loadEjectButton.whenPressed(new LoaderEject());
-    	loadSequenceButton.whenPressed(new LoadSequence());
+    	rightBumper.whenPressed(new FireSequence());
+    	yButton.whileHeld(new AngleDown());
+    	aButton.whileHeld(new AngleUp());
+    	bButton.whenPressed(new LoaderRetract());
+    	backButton.whenPressed(new LoaderEject());
+    	startButton.whenPressed(new LoadSequence());
     	//compressButton.whenPressed(new PowerSwitch());
     	
     	//Smart Dashboard command data
@@ -52,14 +53,14 @@ public class OI {
 
     }
     
-    public static double getJoystickY(){
-    	return stick.getY();
+    public static double getXboxY(){
+    	return xbox.getY(Hand.kLeft);
     }
-    public static double getJoystickX(){
-    	return stick.getX();
+    public static double getXboxX(){
+    	return xbox.getX(Hand.kLeft);
     }
-    public static double getJoystickZ(){
-    	return stick.getZ();
+    public static double getXboxZ(){
+    	return xbox.getX(Hand.kRight);
     }
 
 }

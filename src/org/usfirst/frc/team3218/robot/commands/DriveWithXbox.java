@@ -8,13 +8,13 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveWithJoystick extends Command {
+public class DriveWithXbox extends Command {
 	double threshold;
 	double z;
 	double y;
 	double x;
 	
-    public DriveWithJoystick() {
+    public DriveWithXbox() {
         requires(Robot.drive);
     }
 
@@ -25,13 +25,13 @@ public class DriveWithJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//if(Math.abs(OI.getJoystickZ())>threshold){
-    		z=OI.getJoystickZ();
+    	//if(Math.abs(OI.getXboxZ())>threshold){
+    		z=OI.getXboxZ();
     //	}else{
     		//z=0;
     	//}
-    	//if(Math.abs(OI.getJoystickY())>threshold){
-    		y=OI.getJoystickY();
+    	//if(Math.abs(OI.getXboxY())>threshold){
+    		y=OI.getXboxY();
     	//}else{
     		//y=0;
     	//}

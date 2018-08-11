@@ -17,15 +17,17 @@ public class RobotMap {
 	
    
     //Joystick Channel
-    public static final int joystickChannel	= 0;
+    public static final int xboxPort	= 0;
     
     //Joystick Button Channels
-    public static final int fireButton=1;
-    public static final int upButton=5;
-    public static final int downButton=3;
-    public static final int loadRetractButton=4;
+    public static final int aButtonPort=1;
+    public static final int bButtonPort=5;
+    public static final int yButtonPort=3;
+    public static final int rightBumperPort=4;
     public static final int loadEjectButton=6;
-    public static int loadSequenceButton=2;
+    public static int leftBumperPort=2;
+    public static final int startButtonPort = 0;
+	public static final int backButtonPort = 0;
   // public static final int compressButton = 7;
     
     //LoaderChannels
@@ -37,6 +39,7 @@ public class RobotMap {
     
     //Firing Solenoid Channels
     public static final int fireChannel=2;//relay
+	
 	
     
 
