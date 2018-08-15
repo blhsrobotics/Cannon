@@ -13,11 +13,11 @@ public class LoadSequence extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-//addSequential(new LoaderRetract());
+    	//addSequential(new LoaderRetract());
     	addSequential(new LoaderEject());
 
 
-addSequential(new LoaderRetract());
+    	addSequential(new LoaderRetract());
         // To run multiple commands at the same time,
         // use addParallel()
         // e.g. addParallel(new Command1());

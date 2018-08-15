@@ -21,13 +21,13 @@ public class RobotMap {
     
     //Joystick Button Channels
     public static final int aButtonPort=1;
-    public static final int bButtonPort=5;
-    public static final int yButtonPort=3;
-    public static final int rightBumperPort=4;
-    public static final int loadEjectButton=6;
-    public static int leftBumperPort=2;
-    public static final int startButtonPort = 0;
-	public static final int backButtonPort = 0;
+    public static final int bButtonPort=2;
+    public static final int yButtonPort=4;
+    public static final int rightBumperPort=6;
+    public static final int loadEjectButton=10;
+    public static int leftBumperPort=5;
+    public static final int startButtonPort = 8;
+	public static final int backButtonPort = 7;
   // public static final int compressButton = 7;
     
     //LoaderChannels

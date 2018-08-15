@@ -24,20 +24,20 @@ public class Loader extends Subsystem {
     }
     
     public void Eject(){
-   loadingSolenoid.set(DoubleSolenoid.Value.kReverse);
+   loadingSolenoid.set(DoubleSolenoid.Value.kForward);
     	//loadingSolenoidEject.set(true);
     //	loadingSolenoidRetract.set(false);
     }
     
     public void Retract(){
-   loadingSolenoid.set(DoubleSolenoid.Value.kForward);
+   loadingSolenoid.set(DoubleSolenoid.Value.kReverse);
     	//loadingSolenoidEject.set(false);
     //	loadingSolenoidRetract.set(true);
     }
     public void Nothing(){
     	loadingSolenoid.set(DoubleSolenoid.Value.kOff);
     	//loadingSolenoidEject.set(false);
-    //	loadingSolenoidRetract.set(false);
+    	//	loadingSolenoidRetract.set(false);
     }
 }
 

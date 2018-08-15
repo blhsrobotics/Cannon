@@ -6,6 +6,7 @@ import org.usfirst.frc.team3218.robot.commands.Angle.AngleUp;
 import org.usfirst.frc.team3218.robot.commands.Loader.LoadSequence;
 import org.usfirst.frc.team3218.robot.commands.Loader.LoaderEject;
 import org.usfirst.frc.team3218.robot.commands.Loader.LoaderRetract;
+import org.usfirst.frc.team3218.robot.commands.cannon.AutoFire;
 import org.usfirst.frc.team3218.robot.commands.cannon.Fire;
 import org.usfirst.frc.team3218.robot.commands.cannon.FireSequence;
 
@@ -37,11 +38,11 @@ public class OI {
     	rightBumper.whenPressed(new FireSequence());
     	yButton.whileHeld(new AngleDown());
     	aButton.whileHeld(new AngleUp());
-    	bButton.whenPressed(new LoaderRetract());
+    	startButton.whenPressed(new LoaderRetract());
     	backButton.whenPressed(new LoaderEject());
-    	startButton.whenPressed(new LoadSequence());
+    	xButton.whenPressed(new LoadSequence());
     	//compressButton.whenPressed(new PowerSwitch());
-    	
+    	leftBumper.whenPressed(new AutoFire());
     	//Smart Dashboard command data
     	SmartDashboard.putData("Angle Up", new AngleUp());
     	SmartDashboard.putData("Angle Down", new AngleDown());
