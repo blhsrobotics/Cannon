@@ -21,8 +21,8 @@ public class DriveWheels extends Subsystem {
     SpeedController rearLeftMotor = new Jaguar(RobotMap.rearLeftChannel);
     SpeedController frontRightMotor = new Jaguar(RobotMap.frontRightChannel);
     SpeedController rearRightMotor = new Jaguar(RobotMap.rearRightChannel);
-	MecanumDrive robotDrive = new MecanumDrive (frontLeftMotor,rearLeftMotor,frontRightMotor,rearRightMotor);
-	 
+	MecanumDrive robotDrive = new MecanumDrive (frontLeftMotor,rearLeftMotor,rearRightMotor,frontRightMotor);
+	double x;
 	public DriveWheels(){
 		
 		frontLeftMotor.setInverted(true);
@@ -32,8 +32,15 @@ public class DriveWheels extends Subsystem {
       }
     
     public void drive(double z, double y){
-   
-    	robotDrive.driveCartesian(Robot.oi.getXboxX(),z,-y); //DIFFERENT POWER
+    	    	
+    	x = Robot.oi.getXboxX();
+    	if(x<0.2&&x>-0.2)
+    		x=0;
+    	if(y<0.2&&y>-0.2)
+    		y=0;
+    	if(z<0.2&&z>-0.2)
+    		z=0;
+    	robotDrive.driveCartesian(x,z,-y); //DIFFERENT POWER
     	
    
     }
